@@ -1,12 +1,16 @@
+// $('#my-dropzone').dropzone({ url: '/api/uploads' });
+
 Dropzone.options.myDropzone = {
   // Prevents Dropzone from uploading dropped files immediately
   autoProcessQueue: false,
+  url: '/api/uploads',
+  paramName: 'image',
 
   init: function() {
-    var submitButton = document.querySelector('#submit-all')
-        myDropzone = this;
+    var submitButton = $('#submit-all');
+    var myDropzone = this;
 
-    submitButton.addEventListener('click', function() {
+    submitButton.on('click', function() {
       myDropzone.processQueue();
     });
 
