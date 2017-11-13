@@ -7,9 +7,18 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${file.fieldname}_${Date.now()}_${file.originalname}`);
+  }
+});
+
 app.post('/api/uploads', (req, res) => {
   const upload = multer({
-    dest: 'uploads/',
+    storage,
     limits: { fileSize: 5000000 },
     fileFilter: (req, file, cb) => {
       const ext = path.extname(file.originalname);
