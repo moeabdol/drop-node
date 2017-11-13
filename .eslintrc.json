@@ -41,5 +41,8 @@
         "after": true
       }
     ]
+  },
+  "globals": {
+    "document": true
   }
 }

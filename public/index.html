@@ -4,11 +4,20 @@
   <meta charset="UTF-8">
   <title>Dropzone With Node</title>
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/dropzone/dist/min/dropzone.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+  <div class="container py-5">
+    <h3>Upload Files</h3>
+    <div action="/target" class="dropzone" id="my-dropzone"></div>
+    <button id="submit-all" class="btn btn-primary mt-3">Submit all files</button>
+  </div>
 
   <script src="/jquery/dist/jquery.min.js"></script>
   <script src="/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/dropzone/dist/min/dropzone.min.js"></script>
   <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
