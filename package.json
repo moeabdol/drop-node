@@ -1,0 +1,22 @@
+{
+  "name": "drop-node",
+  "version": "1.0.0",
+  "description": "NodeJS application to upload files using Dropzone.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moeabdol/drop-zone.git"
+  },
+  "author": "moeabdol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moeabdol/drop-zone/issues"
+  },
+  "homepage": "https://github.com/moeabdol/drop-zone#readme",
+  "devDependencies": {
+    "eslint": "^4.11.0"
+  }
+}
