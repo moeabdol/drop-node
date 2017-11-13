@@ -1,7 +1,4 @@
-// $('#my-dropzone').dropzone({ url: '/api/uploads' });
-
-Dropzone.options.myDropzone = {
-  // Prevents Dropzone from uploading dropped files immediately
+Dropzone.options.imagesDropzone = {
   autoProcessQueue: false,
   url: '/api/uploads',
   paramName: 'image',
@@ -11,13 +8,12 @@ Dropzone.options.myDropzone = {
     var myDropzone = this;
 
     submitButton.on('click', function() {
+      myDropzone.options.autoProcessQueue = true;
       myDropzone.processQueue();
     });
 
-    // You might want to show the submit button only when
-    // files are dropped here:
-    this.on('addedfile', function() {
-      // Show submit button here and/or inform user to click it.
+    this.on('queuecomplete', function() {
+      myDropzone.options.autoProcessQueue = false;
     });
   }
 };
